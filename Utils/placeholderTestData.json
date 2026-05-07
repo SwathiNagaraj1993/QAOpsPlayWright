@@ -1,0 +1,20 @@
+[
+    {
+        "username": "swathi.n2@gmail.com",
+        "password": "Swathi@123",
+        "productName": "ZARA COAT 3",
+        "name":"Swathi N",
+        "CVV":"123",
+        "country": " India",
+        "confirmtext": " Thankyou for the order. "
+    },
+    {
+        "username": "anshika@gmail.com",
+        "password": "Iamking@000",
+        "productName": "ADIDAS ORIGINAL",
+        "name":"Swathi N",
+        "CVV":"123",
+        "country": " India",
+        "confirmtext": " Thankyou for the order. "
+    }
+]

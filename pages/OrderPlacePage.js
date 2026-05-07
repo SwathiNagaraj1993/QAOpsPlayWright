@@ -1,0 +1,48 @@
+const{expect} = require('@playwright/test')
+class OrderPlacePage {
+    constructor(page) {
+        this.page = page
+        this.nameOnCard = page.locator("//*[contains(text(),'Name on Card')]/..//input")
+        this.CVVNumber = page.locator("//*[contains(text(),'CVV')]/..//input")
+        this.shippingEmail = page.locator("//*[contains(@class,'user__name')]/label")
+        this.selectCountryDropdown = page.locator("//*[@placeholder='Select Country']")
+        this.dropdownResults = page.locator("//section[contains(@class,'ta-results')]")
+        this.optionsText = page.locator("//section[contains(@class,'ta-results')]/button")
+        this.placeOrderBtn = page.locator("//*[contains(@class,'action__submit')]")
+    }
+
+    async fillDetails(name,cvv) {
+        await this.nameOnCard.fill("Swathi N")
+        await this.CVVNumber.fill("123")
+    }
+
+    async verifyEmail(emailID)
+    {
+        await expect(this.shippingEmail).toHaveText(emailID)
+    }
+
+    async selectCountry(country)
+    {
+        await this.selectCountryDropdown.pressSequentially("ind", { delay: 150 })
+        
+            await this.dropdownResults.waitFor()
+        
+            const options = await this.optionsText
+            const optionsCount = await options.count()
+        
+            for (let i = 0; i < optionsCount; i++) {
+                if (await options.locator("//span").nth(i).textContent() === country) {
+                    await options.locator("//span").nth(i).click()
+                    break
+                }
+            }
+        
+    }
+
+    async clickPlaceOrder()
+    {
+        await this.placeOrderBtn.click()
+    }
+}
+
+module.exports={OrderPlacePage}
