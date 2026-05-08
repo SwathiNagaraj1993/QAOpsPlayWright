@@ -11,3 +11,4 @@ Feature: ECommerce Validations
   Examples:
   |username|password|productName|name|cvv|country|confirmText|
   |swathi.n2@gmail.com|Swathi@123|ZARA COAT 3|Swathi|123| India| Thankyou for the order. |
+
