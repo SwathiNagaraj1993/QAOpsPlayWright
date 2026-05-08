@@ -4,6 +4,8 @@ test("End to End",async({browser})=>{
     const page = await context.newPage()
     const emailID='swathi.n2@gmail.com'
     
+
+    //added
     const productName = "ZARA COAT 3"
     const products = page.locator("//*[@class='card-body']")
     
