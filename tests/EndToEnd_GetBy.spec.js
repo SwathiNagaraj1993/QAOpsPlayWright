@@ -5,7 +5,7 @@ test("End to End",async({browser})=>{
     const emailID='swathi.n2@gmail.com'
     
 
-    //added
+    //added fix
     const productName = "ZARA COAT 3"
     const products = page.locator("//*[@class='card-body']")
     
